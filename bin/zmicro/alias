@@ -13,7 +13,7 @@ help() {
 }
 
 version() {
-  kubelet version
+  kubelet --version
 }
 
 core() {
