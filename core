@@ -15,18 +15,15 @@ install() {
   local usr_bin_dir="$PACKAGE_USER_BIN_DIR"
   local tmp_dir="$PACKAGE_TMP_DIR"
 
-  # #
-  # case $platform in
-  # darwin)
-  #   platform="osx"
-  #   ;;
-  # linux) ;;
+  #
+  case $platform in
+  linux) ;;
 
-  # *)
-  #   log::error "[$(timestamp)] unsupport platform: $platform"
-  #   return 1
-  #   ;;
-  # esac
+  *)
+    log::error "[$(timestamp)] unsupport platform: $platform"
+    return 1
+    ;;
+  esac
 
   # case $arch in
   # arm64) ;;
@@ -56,8 +53,6 @@ install() {
   local source_bin_file="$tmp_file"
   # reference: https://github.com/9seconds/mtg/releases
   # example:
-  #   https://dl.k8s.io/release/v1.27.2/bin/darwin/amd64/kubelet
-  #   https://dl.k8s.io/release/v1.27.2/bin/darwin/arm64/kubelet
   #   https://dl.k8s.io/release/v1.27.2/bin/linux/amd64/kubelet
   #   https://dl.k8s.io/release/v1.27.2/bin/linux/arm64/kubelet
   # generate url
